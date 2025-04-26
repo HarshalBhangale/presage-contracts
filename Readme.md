@@ -1,6 +1,6 @@
-# ===========================================================
+
 # Presage Prediction Market (Xion Testnet)
-# ===========================================================
+
 
 ## A decentralized prediction market where users bet on BTC price movement (Bull/Bear).
 
