@@ -1,0 +1,40 @@
+[package]
+name = "presage"
+version = "0.1.0"
+edition = "2021"
+
+exclude = [
+  "artifacts/*",
+]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+library = []
+
+[dependencies]
+cosmwasm-schema    = { workspace = true }
+cosmwasm-std       = { workspace = true }
+cosmwasm-storage   = { workspace = true }
+cw2                = { workspace = true }
+cw20               = { workspace = true }
+cw-storage-plus    = { workspace = true }
+cw-utils           = { workspace = true }
+sha2               = { workspace = true }
+tiny-keccak        = { workspace = true }
+thiserror          = { workspace = true }
+serde              = { workspace = true }
+serde_json         = { workspace = true }
+schemars           = { workspace = true }
+hex                = { workspace = true }
+ripemd             = { workspace = true }
+bech32             = { workspace = true }
+base64             = { workspace = true }
+rsa                = { workspace = true }
+getrandom          = { workspace = true }
+p256               = { workspace = true }
+cosmos-sdk-proto   = { workspace = true }
+pyth-sdk-cw        = { workspace = true }
+url                = { workspace = true }
+osmosis-std        = { workspace = true }
