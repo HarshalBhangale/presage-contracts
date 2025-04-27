@@ -10,8 +10,20 @@
 
 ## Chain: Xion Testnet
 ## RPC: https://rpc.xion-testnet-2.burnt.com:443
-## Contract Address: xion1w5r4ut672pp4yxutn6fup67mfzkvfqv9drx572cxsw5q3t7r3wasfut9u5
-## Deployed By: xion19hj38fvsrmfsu94s4e3g0dk63dtflquyr5kr8k
+```
+Contract Address: xion12x4cy806a8349mak6dugukxkzd6426cdd6z599v3yd90d4e0n6tq9rdst7
+
+Admin: "" (no admin, immutable)
+
+Operator: xion19hj38fvsrmfsu94s4e3g0dk63dtflquyr5kr8k
+
+USDC Token Address: xion1h3tgz6esvdcscx26rltzer06a2x7hamttymyxrvqkz5gak9tm97q7v60eq
+
+Oracle Address: xion1wptw89weav8tnpgxg4fyhcahgk8yy99lka3w308536ktadkvjwxqe463hl
+
+BTC Price Feed ID: 436ccb0d465f3cb48554bcc8def65ff695341b3ebe0897563d118b9291178d0f
+
+```
 
 # -----------------------------------------------------------
 ## 📋 How the Contract Works

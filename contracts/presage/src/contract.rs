@@ -140,16 +140,21 @@ fn execute_bet(
     if LEDGER.has(deps.storage, (epoch, user_addr.clone())) {
         return Err(ContractError::AlreadyBet {});
     }
+    let sent_amount = info.funds.iter().find(|c| c.denom == config.usdc_token).map(|c| c.amount).unwrap_or(Uint128::zero());
 
-    let transfer_msg = CosmosMsg::Wasm(WasmMsg::Execute {
-        contract_addr: config.usdc_token.to_string(),
-        msg: to_json_binary(&Cw20ExecuteMsg::TransferFrom {
-            owner: user_addr.to_string(),
-            recipient: env.contract.address.to_string(),
-            amount, 
-        })?,
-        funds: vec![],
-    });
+    if sent_amount != amount {
+        return Err(ContractError::InvalidBetFunds {});
+    }
+
+    // let transfer_msg = CosmosMsg::Wasm(WasmMsg::Execute {
+    //     contract_addr: config.usdc_token.to_string(),
+    //     msg: to_json_binary(&Cw20ExecuteMsg::TransferFrom {
+    //         owner: user_addr.to_string(),
+    //         recipient: env.contract.address.to_string(),
+    //         amount, 
+    //     })?,
+    //     funds: vec![],
+    // });
 
     match position {
         Position::Bull => round.bull_amount += amount,
@@ -180,7 +185,6 @@ fn execute_bet(
     };
     
     Ok(Response::new()
-        .add_submessage(SubMsg::new(transfer_msg))
         .add_attribute("method", "bet")
         .add_attribute("position", position_str)
         .add_attribute("user", info.sender)

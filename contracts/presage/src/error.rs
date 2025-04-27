@@ -71,4 +71,8 @@ pub enum ContractError {
 
     #[error("Oracle error: {0}")]
     OracleError(String),
+
+
+    #[error("invalid usdc token")]
+    InvalidBetFunds
 }
